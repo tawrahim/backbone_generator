@@ -6,8 +6,8 @@ require 'backbone_generator/version'
 Gem::Specification.new do |spec|
   spec.name          = "backbone_generator"
   spec.version       = BackboneGenerator::VERSION
-  spec.authors       = ["Tawheed Abdul-Raheem"]
-  spec.email         = ["tawrahim@gmail.com"]
+  spec.authors       = ["Tawheed Abdul-Raheem","Mohammad Tahawi"]
+  spec.email         = ["tawrahim@gmail.com","mhd.tahawi@gmail.com"]
   spec.description   = %q{Backbone.js generator}
   spec.summary       = %q{Backbone.js generator}
   spec.homepage      = ""
@@ -18,8 +18,9 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency "bundler", "~> 1.3"
+  
   spec.add_development_dependency "rake"
+  spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rspec", "~> 2.6"
 
   spec.post_install_message = <<-EOS

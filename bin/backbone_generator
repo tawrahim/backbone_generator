@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require "backbone_generator"
+require "backbone_generator/cli"
+
+BackboneGenerator::CLI.start

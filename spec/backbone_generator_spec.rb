@@ -1,6 +1,5 @@
 require "spec_helper"
+require "backbone_generator"
 
-describe BackboneGenerator do
-    it "should respond to"
-    it { should respond_to(BackboneGenerator.post_install_message) }
+describe "Main backbone generator class" do
 end

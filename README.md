@@ -18,13 +18,13 @@ Or install it yourself as:
 
 ## Usage
 
-`backone_generator new app_name`  
-`backone_generator model model_name`  
-`backone_generator view view_name`  
-`backone_generator route route_name`  
-`backone_generator collection collection_name`  
-`backone_generator utility utility_name`  
-`backone_generator library library_name`
+`backbone_generator new app_name`  
+`backbone_generator model model_name`  
+`backbone_generator view view_name`  
+`backbone_generator route route_name`  
+`backbone_generator collection collection_name`  
+`backbone_generator utility utility_name`  
+`backbone_generator library library_name`
 
 ## Contributing
 

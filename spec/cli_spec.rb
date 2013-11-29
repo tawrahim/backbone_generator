@@ -1,4 +1,5 @@
 require "spec_helper"
+require "backbone_generator/cli"
 
 describe BackboneGenerator::CLI do
     it { should respond_to(:new) }

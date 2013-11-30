@@ -1,0 +1,15 @@
+/**
+ * This file contains all the global css
+ * definitions by SANBLaze.
+ * All global overides should happen here.
+ * DO NOT MODIFY ANYTHING IN THE LIB FOLDER!!!
+ * @author: Tawheed Abdul-Raheem
+ * @file: SANBLaze.CSS
+ * */
+
+.navbar {
+    background: black;
+    background-image: url('../img/sanblaze_logo_header.jpg');
+    background-repeat: no-repeat;
+    height: 80px;
+} 

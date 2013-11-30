@@ -3,12 +3,6 @@ require 'thor'
 module BackboneGenerator
     class	CLI < Thor
 
-        attr_accessor :foo
-
-        def initialize
-            @foo = 'Bar'
-        end
-
         desc "new app_name", "Create a new backbone.js application named app_name"
         def new app_name
         end

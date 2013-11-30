@@ -22,7 +22,4 @@ describe BackboneGenerator::CLI do
     
     it { should_receive(:new).with(:app_name) } 
     
-    describe "the instance methods" do
-        its(:foo) { should == 'Bar' }
-    end
 end

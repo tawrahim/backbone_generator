@@ -16,5 +16,3 @@ test/tmp
 test/version_tmp
 tmp
 *.sh
-play.rb
-back_cli.rb

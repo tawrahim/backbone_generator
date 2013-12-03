@@ -1,5 +1,4 @@
 Copyright (c) 2013 Tawheed Abdul-Raheem
-Copyright (c) 2013 Mhd Tahawi
  
 MIT License
 

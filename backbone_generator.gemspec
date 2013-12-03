@@ -6,15 +6,14 @@ require 'backbone_generator/version'
 Gem::Specification.new do |spec|
   spec.name          = "backbone_generator"
   spec.version       = BackboneGenerator::VERSION
-  spec.authors       = ["Tawheed Abdul-Raheem","Mohammad Tahawi"]
-  spec.email         = ["tawrahim@gmail.com","mhd.tahawi@gmail.com"]
+  spec.authors       = ["Tawheed Abdul-Raheem"]
+  spec.email         = ["tawrahim@gmail.com"]
   spec.description   = %q{Backbone.js generator}
-  spec.summary       = %q{Backbone.js generator}
-  spec.homepage      = ""
+  spec.summary       = %q{Yet another backbone js generator}
+  spec.homepage      = "http://tawrahim.github.io/backbone_generator_web/"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
-  #spec.executables   = ['backbone_generator']
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]

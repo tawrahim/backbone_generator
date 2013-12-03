@@ -14,34 +14,20 @@ module BackboneGenerator
     class CLI < Thor
 
         private
-        # isvalid? is invoked before on action
-        # check if procedding with the action is vaild, if not
-        # print a message telling what is wrong
-        #
-        # @author Mhd Tahawi 
-        # @private
         def isvalid?
-            # This line is neccesary because if the user invokes
-            # the other method before invoking the new fuction the
-            # isvalid? method will blow up 
-            @app_directory ||= ""
-            if @app_directory.empty?
-                puts "you first new to create an app"
-                puts "backbone_generator new app_name"
-                return false
-            elsif @app_directory != Dir.getwd
+            if File.file? ".BACKBONE_GENERATOR_APP"
+                return true
+            else
                 puts "This command must be excuted in the root level of your app"
                 return false
-            else
-                return true
             end
         end
 
         public
         desc "new app_name", "Create a new backbone.js application named app_name"
         def new app_name
-            @app_directory = File.expand_path(app_name, __FILE__)
-            BackboneGenerator::NewGenerator.new(app_name)
+            #@app_directory = Dir.getwd + "/" + app_name
+            BackboneGenerator::NewGenerator.new app_name
         end
 
         desc "model model_name", "Create a new backbone.js model named model_name "

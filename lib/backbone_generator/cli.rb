@@ -26,7 +26,6 @@ module BackboneGenerator
         public
         desc "new app_name", "Create a new backbone.js application named app_name"
         def new app_name
-            #@app_directory = Dir.getwd + "/" + app_name
             BackboneGenerator::NewGenerator.new app_name
         end
 

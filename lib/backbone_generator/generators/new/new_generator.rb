@@ -10,6 +10,7 @@ module BackboneGenerator
     class NewGenerator 
     
         def initialize app_name
+            BackboneGenerator.hello
             @app_name = app_name.chomp("/")
             @target_path = File.join(Dir.getwd, @app_name)
             Dir.mkdir (@target_path)

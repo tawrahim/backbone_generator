@@ -1,8 +1,7 @@
 /**
- * This file loads the neccesary js file
- * on the initial page load
- * @author: Tawheed Abdul-Raheem
- * @class: Requirejs config file
+ * TODO: add description of class
+ * @author: 
+ * @class: 
  * */
 
 /* global require */
@@ -20,29 +19,27 @@
             }
         },
         paths: {
-            jquery: 'lib/jquery/jquery',
+            jquery: 'lib/jquery/jquery-2.0.3.min',
             underscore: 'lib/underscore/underscore',
             backbone: 'lib/backbone/backbone',
-            mustache: 'lib/mustache/mustache',
             text: 'lib/requirejs-text/text'
         },
-        urlArgs : "v=2" 
+        urlArgs : "v=2"
 
     });
 
     require([
             'backbone',
-            'mustache',
             'views/MainView',
             'router/Router'
-    ], function (Backbone, Mustache, SANBLazeMainView, SANBLazeRoutes) {
+    ], function (Backbone,  AppMainView, AppRoutes) {
         /*jshint nonew:false*/
         
         // Initialize routing and start Backbone.history()
-        new SANBLazeRoutes();
+        new AppRoutes();
         Backbone.history.start();
 
         // Initialize the main application view
-        new SANBLazeMainView();
+        new AppMainView();
     });
 }());

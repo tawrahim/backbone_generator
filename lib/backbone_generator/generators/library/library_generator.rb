@@ -2,13 +2,13 @@
 # @since 0.0.3
 module BackboneGenerator
 
-    # Abstract base class for generating
-    # utility A.K.A copying template
+    # Abstract base class for fetching
+    # javascript libaries from the internet
     # @author Tawheed Abdul-Raheem
-    class UtilityGenerator
+    class ModelGenerator
 
         class << self
-            def create_utility model_name
+            def fetch_library library_name
             end
         end
     end

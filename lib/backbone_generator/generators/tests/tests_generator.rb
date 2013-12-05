@@ -3,12 +3,12 @@
 module BackboneGenerator
 
     # Abstract base class for generating
-    # utility A.K.A copying template
+    # tests A.K.A copying template
     # @author Tawheed Abdul-Raheem
-    class UtilityGenerator
+    class TestGenerator
 
         class << self
-            def create_utility model_name
+            def create_test test_name
             end
         end
     end

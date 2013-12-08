@@ -23,8 +23,7 @@ module BackboneGenerator
                 :author          => git_user_name.empty? ? "TODO: Write your name" : git_user_name,
                 :email           => git_user_email.empty? ? "TODO: Write your email address" : git_user_email,
             })
-
-
+            BackboneGenerator.option_details.freeze
             copy_static_files
             copy_compiled_files
             puts "Initializing git repo in " + Dir.getwd + "/" + app_name
@@ -39,28 +38,33 @@ module BackboneGenerator
                 puts @app_name + file
             end
 
-            css_img_libs = ["/css", "/img", "/js/libs"]
-            css_img_libs.each do |file|
-                FileUtils.cp_r(Dir.glob(@template_path + file), @target_path)
-            end
-
-            puts Dir.entries(@template_path + "/js/libs")
-
-            print "created ".green
-            puts @app_name + "/css/main.css"
-            print "created ".green
-            puts @app_name + "/img/backbone.png"
-
-            js_files = ['/js/collections', '/js/models', '/js/views', '/js/templates', '/js/utilities'] 
+            js_files = ['/js/collections', '/js/models', '/js/views', '/js/templates', '/js/utilities', '/js/libs']
             js_files.each do |file|
                 FileUtils.mkdir_p @target_path + file
             end
 
+            FileUtils.cp_r(Dir.glob(@template_path + '/js/libs/'), @target_path + '/js/libs/')
 
+            css_img = ["/css", "/img"]
+            css_img.each do |file|
+                FileUtils.cp_r(Dir.glob(@template_path + file), @target_path)
+            end
+
+            # comments to display
+            print "created ".green
+            puts @app_name + "/css/main.css"
+            print "created ".green
+            puts @app_name + "/img/backbone.png"
         end
 
         def copy_compiled_files
-            BackboneGenerator.compile_and_copy(@template_path + "/main.tt", @target_path + "/js/main.js")
+            templates_hash = {
+                "/main.tt"         => "/js/main.js",
+                "README.tt"        => "README.md"
+            }
+            templates_hash.each do |key, value|
+                BackboneGenerator.compile_and_copy(@template_path + key, @target_path + value, BackboneGenerator.option_details)
+            end
         end
     end
 end

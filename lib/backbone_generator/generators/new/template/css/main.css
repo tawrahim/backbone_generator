@@ -1,15 +1,43 @@
-/**
- * This file contains all the global css
- * definitions by SANBLaze.
- * All global overides should happen here.
- * DO NOT MODIFY ANYTHING IN THE LIB FOLDER!!!
- * @author: Tawheed Abdul-Raheem
- * @file: SANBLaze.CSS
- * */
+.outer {
+    margin-top: 10%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
 
-.navbar {
-    background: black;
-    background-image: url('../img/sanblaze_logo_header.jpg');
-    background-repeat: no-repeat;
-    height: 80px;
-} 
+#hello_div {
+	background: #f2f2f2;
+	color: #525252;
+	margin-top: 40px;
+	margin-bottom: 50px;
+	padding: 40px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+	border-radius: 10px;
+}
+
+h1 {
+	font-weight:600;
+	font-size:38px;
+	line-height: 38px;
+	color:#525252;
+    font-style:italic;
+}
+
+p {
+	font-weight:200;
+	line-height: 38px;
+}
+
+code {
+    display: inline;
+    color: rgb(67, 153, 81);
+    font-style: bold;
+    font-size: 1.9em;
+}
+
+a {
+    color: blue;
+    text-decoration: none;
+}

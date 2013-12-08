@@ -1,0 +1,9 @@
+# <%= config[:app_name] %>
+App description goes here!
+
+## Usage
+Usage information goes here
+
+## License
+Copyright (c) <%= config[:author] %>
+

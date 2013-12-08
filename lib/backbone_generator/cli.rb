@@ -14,6 +14,7 @@ module BackboneGenerator
             if File.exists? ".BACKBONE_GENERATOR_APP"
                 return true
             else
+                print "error ".red
                 puts "This command must be excuted in the root level of your app"
                 return false
             end
@@ -23,6 +24,7 @@ module BackboneGenerator
         desc "new app_name", "Create a new backbone.js application named app_name"
         def new app_name
             if File.exists? app_name
+                print "error ".red
                 puts "A folder with the name " + app_name + " already exists"
             else
                 BackboneGenerator::NewGenerator.new app_name 

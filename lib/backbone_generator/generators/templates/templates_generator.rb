@@ -15,7 +15,7 @@ module BackboneGenerator
                 else
                     dir_path = File.join(Dir.getwd)
                 end
-                template_path = File.expand_path(File.dirname(__FILE__)) + "/template/Utility.tt"
+                template_path = File.expand_path(File.dirname(__FILE__)) + "/template/Template.tt"
                 target_path = "/js/templates/" + template_name.capitalize + ".Template.html"
                 template_hash = {
                     :app_name  => app_name,

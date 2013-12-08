@@ -39,7 +39,7 @@ module BackboneGenerator
                 puts @app_name + file
             end
 
-            js_files = ['/js/collections', '/js/models', '/js/views', '/js/templates', '/js/utilities', '/js/libs', 'js/routes']
+            js_files = ['/js/collections', '/js/models', '/js/views', '/js/templates', '/js/utilities', '/js/libs', '/js/routes']
             js_files.each do |file|
                 FileUtils.mkdir_p @target_path + file
             end
@@ -60,8 +60,9 @@ module BackboneGenerator
 
         def copy_compiled_files
             templates_hash = {
-                "/main.tt"         => "/js/main.js",
-                "/README.tt"        => "/README.md"
+                "/README.tt"             => "/README.md",
+                "/main.tt"               => "/js/main.js",
+                "/views/Main.View.tt"    => "/js/views/Main.View.js"
             }
             templates_hash.each do |key, value|
                 BackboneGenerator.compile_and_copy(@template_path + key, @target_path + value, BackboneGenerator.option_details)
@@ -72,8 +73,8 @@ module BackboneGenerator
             BackboneGenerator::ViewGenerator.create_view("hello")
             BackboneGenerator::ModelGenerator.create_model("hello")
             BackboneGenerator::CollectionGenerator.create_collection("hello")
-            #BackboneGenerator::RouteGenerator.create_route(@app_name)
-            #BackboneGenerator::UtilityGenerator.create_utility(@app_name)
+            BackboneGenerator::RouteGenerator.create_route(@app_name)
+            BackboneGenerator::UtilityGenerator.create_utility(@app_name)
         end
     end
 end

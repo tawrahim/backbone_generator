@@ -21,9 +21,10 @@ module BackboneGenerator
                     :app_name  => app_name,
                     :route_name => route_name.capitalize
                 }
-                if File.exist? dir_path + target_path
+
+                if File.exists? dir_path + target_path
                     print "error ".red
-                    puts "View with the name specified already exists"
+                    puts "Route with the name specified already exists"
                 else
                     BackboneGenerator.compile_and_copy(template_path, dir_path + target_path, route_hash)
                     print "created ".green

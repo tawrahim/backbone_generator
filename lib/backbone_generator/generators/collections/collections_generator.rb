@@ -23,7 +23,7 @@ module BackboneGenerator
                 }
                 if File.exist? dir_path + target_path
                     print "error ".red
-                    puts "View with the name specified already exists"
+                    puts "Collection with the name specified already exists"
                 else
                     BackboneGenerator.compile_and_copy(template_path, dir_path + target_path, collection_hash)
                     print "created ".green

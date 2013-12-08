@@ -1,4 +1,6 @@
 require "thor"
+require "webrick"
+require "colorize"
 require "backbone_generator/version"
 require "backbone_generator/auxilliary"
 require "backbone_generator/generators/collections/collections_generator.rb"

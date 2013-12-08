@@ -24,6 +24,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec", "~> 2.6"
 
   spec.add_dependency              "thor"
+  spec.add_dependency              "colorize", "~>0.6.0"
 
   spec.post_install_message = <<-EOS
 

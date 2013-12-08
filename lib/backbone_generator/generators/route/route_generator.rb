@@ -8,7 +8,18 @@ module BackboneGenerator
     class RouteGenerator
 
         class << self
-            def create_route model_name
+            def create_route route_name
+                path = File.expand_path(File.dirname(__FILE__))
+                target_path = "js/routes/"
+                template_path = path + "/template/js/routes/"
+
+                if File.exist? target_path + route_name
+                    print "error ".red
+                    puts "Route with the name specified already exists"
+                else
+                    print "created ".green
+                    puts  target_path + route_name
+                end
             end
         end
     end

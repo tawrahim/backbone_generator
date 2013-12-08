@@ -39,17 +39,19 @@ module BackboneGenerator
                 puts @app_name + file
             end
 
-            css_img = ["/css", "/img"]
-            css_img.each do |file|
+            css_img_libs = ["/css", "/img", "/js/libs"]
+            css_img_libs.each do |file|
                 FileUtils.cp_r(Dir.glob(@template_path + file), @target_path)
             end
+
+            puts Dir.entries(@template_path + "/js/libs")
 
             print "created ".green
             puts @app_name + "/css/main.css"
             print "created ".green
-            puts @app_name + "img/backbone.png"
+            puts @app_name + "/img/backbone.png"
 
-            js_files = ['/js/collections', '/js/models', '/js/views', '/js/templates'] 
+            js_files = ['/js/collections', '/js/models', '/js/views', '/js/templates', '/js/utilities'] 
             js_files.each do |file|
                 FileUtils.mkdir_p @target_path + file
             end

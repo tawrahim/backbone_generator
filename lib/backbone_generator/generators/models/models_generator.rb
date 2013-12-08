@@ -9,16 +9,25 @@ module BackboneGenerator
 
         class << self
             def create_model model_name
-                path = File.expand_path(File.dirname(__FILE__))
-                target_path = "js/models/"
-                template_path = path + "/template/js/models/"
-
-                if File.exist? target_path + model_name
-                    print "error ".red
-                    puts "Collection with the name specified already exists"
+                app_name  = BackboneGenerator.option_details[:app_name] || File.basename(Dir.getwd).chomp("/")
+                if BackboneGenerator.option_details[:app_name]
+                    dir_path = File.join(Dir.getwd, app_name)
                 else
+                    dir_path = File.join(Dir.getwd)
+                end
+                template_path = File.expand_path(File.dirname(__FILE__)) + "/template/Model.tt"
+                target_path = "/js/models/" + model_name.capitalize + ".Model.js"
+                model_hash = {
+                    :app_name  => app_name,
+                    :model_name => model_name.capitalize
+                }
+                if File.exist? dir_path + target_path
+                    print "error ".red
+                    puts "View with the name specified already exists"
+                else
+                    BackboneGenerator.compile_and_copy(template_path, dir_path + target_path, model_hash)
                     print "created ".green
-                    puts  target_path + model_name
+                    puts  app_name.downcase + target_path
                 end
             end
         end

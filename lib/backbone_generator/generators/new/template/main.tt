@@ -1,7 +1,7 @@
 /**
  * TODO: add description of class
- * @author: 
- * @class: 
+ * @author: <%= config[:author] %> 
+ * @class: main.js
  * */
 
 /* global require */
@@ -30,16 +30,16 @@
 
     require([
             'backbone',
-            'views/MainView',
-            'router/Router'
-    ], function (Backbone,  AppMainView, AppRoutes) {
+            'views/Main.View',
+            'routes/Routes'
+    ], function (Backbone,  <%= config[:app_name] %>MainView, <%= config[:app_name] %>Routes) {
         /*jshint nonew:false*/
         
         // Initialize routing and start Backbone.history()
-        new AppRoutes();
+        new <%= config[:app_name] %>Routes();
         Backbone.history.start();
 
         // Initialize the main application view
-        new AppMainView();
+        new <%= config[:app_name] %>MainView();
     });
 }());

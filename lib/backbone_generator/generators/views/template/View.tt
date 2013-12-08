@@ -1,11 +1,11 @@
 /**
  * TODO: add description of class
  * @author: 
- * @class: 
+ * @class: <%= config[:view_name] %>.js
  * */
 
 /* global define */
-var App = App || {};
+var <%= config[:app_name] %> = <%= config[:app_name] %> || {};
 
 (function() {
     'use strict';
@@ -14,17 +14,18 @@ var App = App || {};
         'jquery',
         'underscore',
         'backbone',
-        'text!templates/Hello.Template.html',
-        ], function($, _, Backbone, helloTemplate) {
+        'text!templates/<%= config[:view_name] %>.Template.html',
+        ], function($, _, Backbone, <%= config[:view_name].downcase %>Template) {
 
-            App.HelloView = Backbone.View.extend({
+            <%= config[:app_name] %>.<%= config[:view_name] %>View = Backbone.View.extend({
 
             //Declare a hash to hold your model data
             model: {},
 
+            //TODO: Change the el tag to match your needs
             el: "#hello_div",
 
-            template: _.template(helloTemplate),
+            template: _.template(<%= config[:view_name] %>Template),
 
             //TODO: Put all event listener code here
             events: {
@@ -44,6 +45,6 @@ var App = App || {};
 
             });
 
-            return App.HelloView;
+            return <%= config[:app_name] %>.<%= config[:view_name] %>View;
         });
 }());

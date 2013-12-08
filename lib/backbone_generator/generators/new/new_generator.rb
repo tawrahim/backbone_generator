@@ -19,7 +19,8 @@ module BackboneGenerator
             git_user_email = `git config user.email`.chomp
 
             BackboneGenerator.option_details.merge!({
-                :app_name        => @app_name,
+                :app_name        => @app_name.capitalize,
+                :app_path        => @target_path,
                 :author          => git_user_name.empty? ? "TODO: Write your name" : git_user_name,
                 :email           => git_user_email.empty? ? "TODO: Write your email address" : git_user_email,
             })
@@ -38,7 +39,7 @@ module BackboneGenerator
                 puts @app_name + file
             end
 
-            js_files = ['/js/collections', '/js/models', '/js/views', '/js/templates', '/js/utilities', '/js/libs']
+            js_files = ['/js/collections', '/js/models', '/js/views', '/js/templates', '/js/utilities', '/js/libs', 'js/routes']
             js_files.each do |file|
                 FileUtils.mkdir_p @target_path + file
             end
@@ -60,11 +61,19 @@ module BackboneGenerator
         def copy_compiled_files
             templates_hash = {
                 "/main.tt"         => "/js/main.js",
-                "README.tt"        => "README.md"
+                "/README.tt"        => "/README.md"
             }
             templates_hash.each do |key, value|
                 BackboneGenerator.compile_and_copy(@template_path + key, @target_path + value, BackboneGenerator.option_details)
+                print "created ".green
+                puts @app_name + value
             end
+
+            BackboneGenerator::ViewGenerator.create_view("hello")
+            BackboneGenerator::ModelGenerator.create_model("hello")
+            BackboneGenerator::CollectionGenerator.create_collection("hello")
+            #BackboneGenerator::RouteGenerator.create_route(@app_name)
+            #BackboneGenerator::UtilityGenerator.create_utility(@app_name)
         end
     end
 end

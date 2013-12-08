@@ -9,6 +9,8 @@ module BackboneGenerator
 
         class << self
             def create_test test_name
+                print "NOTICE ".yellow
+                puts "Will be implemented in the next Release"
             end
         end
     end

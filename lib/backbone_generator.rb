@@ -15,5 +15,4 @@ require "backbone_generator/generators/views/views_generator.rb"
 
 module BackboneGenerator
   # Your code goes here...
-  puts "testing our gem"
 end

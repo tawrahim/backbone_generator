@@ -71,8 +71,8 @@ module BackboneGenerator
             BackboneGenerator::TestGenerator.create_test(test_name) unless !isvalid?
         end
 
-        desc "start server", "Start a server, it defaults to port 5000 or you can pass a second argumnent for the port"
-        def start_server(port=5000)
+        desc "server", "Start a server, it defaults to port 5000 or you can pass a second argumnent for the port"
+        def server(port=5000)
             BackboneGenerator.start_server(port) unless !isvalid?
         end
     end

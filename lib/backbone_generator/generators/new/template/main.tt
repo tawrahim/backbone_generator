@@ -19,10 +19,10 @@
             }
         },
         paths: {
-            jquery: 'lib/jquery/jquery-2.0.3.min',
-            underscore: 'lib/underscore/underscore',
-            backbone: 'lib/backbone/backbone',
-            text: 'lib/requirejs-text/text'
+            jquery: 'libs/jquery/jquery-2.0.3.min',
+            underscore: 'libs/underscore/underscore',
+            backbone: 'libs/backbone/backbone',
+            text: 'libs/requirejs-text/text'
         },
         urlArgs : "v=2"
 
@@ -31,7 +31,7 @@
     require([
             'backbone',
             'views/Main.View',
-            'routes/Routes'
+            'routes/<%= config[:app_name] %>.Route',
     ], function (Backbone,  <%= config[:app_name] %>MainView, <%= config[:app_name] %>Routes) {
         /*jshint nonew:false*/
         

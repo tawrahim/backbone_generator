@@ -25,7 +25,7 @@ var <%= config[:app_name] %> = <%= config[:app_name] %> || {};
             //TODO: Change the el tag to match your needs
             el: "#hello_div",
 
-            template: _.template(<%= config[:view_name] %>Template),
+            template: _.template(<%= config[:view_name].downcase %>Template),
 
             //TODO: Put all event listener code here
             events: {

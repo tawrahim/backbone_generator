@@ -1,10 +1,11 @@
 /**
  * TODO: add description of class
  * @author: 
- * @class: 
+ * @class: <%= config[:route_name] %>Route
  * */
 
-var SANBLaze = SANBLaze || {};
+/* global define */
+var <%= config[:app_name] %> = <%= config[:app_name] %> || {};
 
 /* global define */
 (function() {
@@ -16,11 +17,11 @@ var SANBLaze = SANBLaze || {};
         'backbone',
         ], function($, _, Backbone) {
             
-            SANBLaze.Router = Backbone.Router.extend({
+            <%= config[:app_name] %>.<%= config[:route_name]%>Route = Backbone.Router.extend({
 
                 //TODO: Define all your routes here
             });
 
-            return SANBLaze.Router;
+            return <%= config[:app_name] %>.<%= config[:route_name] %>Route;
         });
 }());

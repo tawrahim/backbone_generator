@@ -1,11 +1,11 @@
 /**
  * TODO: add description of class
  * @author: 
- * @class: 
+ * @class: <%= config[:collection_name] %>Collection
  * */
 
 /* global define */
-var App = App || {};
+var <%= config[:app_name] %> = <%= config[:app_name] %> || {};
 
 (function() {
     'use strict';
@@ -18,13 +18,12 @@ var App = App || {};
             
             // Collection is a group of models that have custom methods
             // that you create for them
-            App.MainContentCollection = Backbone.Collection.extend({
-                model: App.MainContentModel,
+            <%= config[:app_name] %>.<%= config[:collection_name] %>Collection = Backbone.Collection.extend({
 
-                //TODO: All your collection methods goes here
-
+                //TODO: Place your collection code here
+                 
             });
 
-            return App.MainContentCollection;
+            return <%= config[:app_name] %>.<%= config[:collection_name] %>Collection;
         });
 }());

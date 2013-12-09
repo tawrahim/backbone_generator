@@ -1,11 +1,11 @@
 /**
  * TODO: add description of class
  * @author: 
- * @class: 
+ * @class: <%= config[:utility_name] %>Utility
  * */
 
 /* global define */
-var App = App || {};
+var <%= config[:app_name] %> = <%= config[:app_name] %> || {};
 
 (function() {
     'use strict';
@@ -15,7 +15,7 @@ var App = App || {};
         'underscore',
         ], function($, _) {
 
-            App.MainUtility = {
+            <%= config[:app_name] %>.<%= config[:utility_name] %>Utility = {
                 
                 //TODO: Define all your utility methods here
                 sayHello: function() {
@@ -23,6 +23,6 @@ var App = App || {};
                 }
             };
 
-            return App.MainUtility;
+            return <%= config[:app_name] %>.<%= config[:utility_name] %>Utility;
         });
 }());

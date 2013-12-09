@@ -16,18 +16,18 @@ module BackboneGenerator
                     dir_path = File.join(Dir.getwd)
                 end
                 utility_hash = {
-                    :app_name  => app_name,
-                    :utility_name => utility_name.capitalize
+                    :app_name  => app_name.slice(0,1).capitalize + app_name.slice(1..-1),
+                    :utility_name => utility_name.slice(0,1).capitalize + utility_name.slice(1..-1),
                 }
                 template_path = File.expand_path(File.dirname(__FILE__)) + "/template/Utility.tt"
-                target_path = "/js/utilities/" +  utility_hash[:app_name] + "." + utility_name.capitalize + "Utility.js"
+                target_path = "/js/utilities/" +  utility_hash[:app_name] + "." + utility_name + "Utility.js"
                 if File.exist? dir_path + target_path
                     print "error ".red
                     puts "Utility with the name specified already exists"
                 else
                     BackboneGenerator.compile_and_copy(template_path, dir_path + target_path, utility_hash)
                     print "created ".green
-                    puts  app_name.downcase + target_path
+                    puts  utility_hash[:app_name] + target_path
                 end
             end
         end

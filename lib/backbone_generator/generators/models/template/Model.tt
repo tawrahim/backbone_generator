@@ -1,11 +1,11 @@
 /**
  * TODO: add description of class
  * @author: 
- * @class: 
+ * @class: <%= config[:model_name] %>Model
  * */
 
 /* global define */
-var App = App || {};
+var <%= config[:app_name] %> = <%= config[:app_name] %> || {};
 
 (function() {
     'use strict';
@@ -16,7 +16,7 @@ var App = App || {};
         'backbone',
         ], function($, _, Backbone) {
             
-            App.MainContentModel = Backbone.Model.extend({
+            <%= config[:app_name] %>.<%= config[:model_name] %>Model = Backbone.Model.extend({
 
             //TODO: Add any default model object here
             defaults: {
@@ -25,7 +25,7 @@ var App = App || {};
 
             //TODO: Add any initialization code here
             initialize: function() {
-                console.log("Initializing main content model");
+                console.log("Initializing main <%= config[:model_name] %> model");
             },
 
             //TODO: Getters and Setters for the model object
@@ -39,6 +39,6 @@ var App = App || {};
 
             });
 
-            return App.MainContentModel;
+            return <%= config[:app_name] %>.<%= config[:model_name] %>Model;
         });
 }());

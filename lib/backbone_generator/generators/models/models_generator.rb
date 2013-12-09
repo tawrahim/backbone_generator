@@ -18,8 +18,8 @@ module BackboneGenerator
                 template_path = File.expand_path(File.dirname(__FILE__)) + "/template/Model.tt"
                 target_path = "/js/models/" + model_name.capitalize + ".Model.js"
                 model_hash = {
-                    :app_name  => app_name,
-                    :model_name => model_name.capitalize
+                    :app_name  => app_name.slice(0,1).capitalize + app_name.slice(1..-1),
+                    :model_name => model_name.slice(0,1).capitalize + model_name.slice(1..-1),
                 }
                 if File.exist? dir_path + target_path
                     print "error ".red
@@ -27,7 +27,7 @@ module BackboneGenerator
                 else
                     BackboneGenerator.compile_and_copy(template_path, dir_path + target_path, model_hash)
                     print "created ".green
-                    puts  app_name.downcase + target_path
+                    puts  model_hash[:app_name] + target_path
                 end
             end
         end

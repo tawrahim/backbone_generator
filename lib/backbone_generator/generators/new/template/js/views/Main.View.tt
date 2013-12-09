@@ -1,11 +1,11 @@
 /**
  * TODO: add description of class
- * @author: 
- * @class: 
+ * @author: <%= config[:author] %>
+ * @class: MainView
  * */
 
 /* global define */
-var App = App || {};
+var <%= config[:app_name] %> = <%= config[:app_name] %> || {};
 
 (function() {
     'use strict';
@@ -17,7 +17,7 @@ var App = App || {};
         'views/Hello.View',
         ], function($, _, Backbone) {
             
-            App.MainView = Backbone.View.extend({
+            <%= config[:app_name] %>.MainView = Backbone.View.extend({
 
                 //TODO: Put all event listener code here
                 events: {
@@ -25,7 +25,7 @@ var App = App || {};
 
                 //TODO: Put all initialization code here
                 initialize: function() {
-                    this.helloView = new App.HelloView();
+                    this.helloView = new <%= config[:app_name] %>.HelloView();
                 },
 
                 //TODO: Put all render logic here
@@ -34,6 +34,6 @@ var App = App || {};
 
             });
 
-            return App.MainView;
+            return <%= config[:app_name] %>.MainView;
         });
 }());

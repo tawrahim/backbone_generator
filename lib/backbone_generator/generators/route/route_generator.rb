@@ -16,10 +16,10 @@ module BackboneGenerator
                     dir_path = File.join(Dir.getwd)
                 end
                 template_path = File.expand_path(File.dirname(__FILE__)) + "/template/Routes.tt"
-                target_path = "/js/routes/" + route_name.capitalize + ".js"
+                target_path = "/js/routes/" + route_name + ".Route.js"
                 route_hash = {
-                    :app_name  => app_name,
-                    :route_name => route_name.capitalize
+                    :app_name  => app_name.slice(0,1).capitalize + app_name.slice(1..-1),
+                    :route_name => route_name.slice(0,1).capitalize + route_name.slice(1..-1),
                 }
 
                 if File.exists? dir_path + target_path
@@ -28,7 +28,7 @@ module BackboneGenerator
                 else
                     BackboneGenerator.compile_and_copy(template_path, dir_path + target_path, route_hash)
                     print "created ".green
-                    puts  app_name.downcase + target_path
+                    puts  route_hash[:app_name] + target_path
                 end
             end
         end

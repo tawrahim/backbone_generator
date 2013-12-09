@@ -18,8 +18,8 @@ module BackboneGenerator
                 template_path = File.expand_path(File.dirname(__FILE__)) + "/template/View.tt"
                 target_path = "/js/views/" + view_name.capitalize + ".View.js"
                 view_hash = {
-                    :app_name  => app_name,
-                    :view_name => view_name.capitalize
+                    :app_name  => app_name.slice(0,1).capitalize + app_name.slice(1..-1),
+                    :view_name => view_name.slice(0,1).capitalize + view_name.slice(1..-1),
                 }
                 if File.exist? dir_path + target_path
                     print "error ".red
@@ -27,7 +27,7 @@ module BackboneGenerator
                 else
                     BackboneGenerator.compile_and_copy(template_path, dir_path + target_path, view_hash)
                     print "created ".green
-                    puts  app_name.downcase + target_path
+                    puts  view_hash[:app_name] + target_path
                     BackboneGenerator::TemplateGenerator.create_template(view_name)
                 end
             end

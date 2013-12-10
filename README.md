@@ -44,13 +44,13 @@ To add a utility to your project run this command
 
 ### server
 To start a server run this command
-`backbone_generator server {optional port number}`  
+`backbone_generator server {optional port number}`    
+The default port that server starts on is 5000, conditionally you can specify a different port number
+
 
 ### library
 To create add a new javascript library to your project run this command
 `backbone_generator library library_name`   
-The default port that server starts on is 5000, conditionally you can specify a different port number
-
 
 ## Contributing
 

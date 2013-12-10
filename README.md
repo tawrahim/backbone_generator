@@ -48,7 +48,7 @@ To start a server run this command
 
 ### library
 To create add a new javascript library to your project run this command
-`backbone_generator library library_name`
+`backbone_generator library library_name`   
 The default port that server starts on is 5000, conditionally you can specify a different port number
 
 

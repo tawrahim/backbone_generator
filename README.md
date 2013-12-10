@@ -61,6 +61,6 @@ The default port that server starts on is 5000, conditionally you can specify a 
 5. Create new Pull Request
 
 ## Credit and Thank you!
-Mhd Tahawi for his help in thinking through some of the features 
-Addy Osamani for his open source book on backbonejs
-Derick Bailey for his awesomse post on naming conventions
+Mhd Tahawi for his help in thinking through some of the features   
+Addy Osamani for his open source book on backbonejs   
+Derick Bailey for his awesomse post on naming conventions  

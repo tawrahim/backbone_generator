@@ -2,6 +2,7 @@
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'backbone_generator/version'
+require 'backbone_generator/post_install_message'
 
 Gem::Specification.new do |spec|
   spec.name          = "backbone_generator"
@@ -26,17 +27,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency              "thor"
   spec.add_dependency              "colorize", "~>0.6.0"
 
-  spec.post_install_message = <<-EOS
-
-==== Release notes for BackboneGenerator gem ====
-
-This gem is NOT yet ready for prime time. PLEASE DO NOT
-USE this gem yet. We are working hard to make dependecy
-management and boiler plate code generation in your
-backbone.js apps seameless.
-
-Tawheed and Mhd
-
-=======================================
-  EOS
+  spec.post_install_message = BackboneGenerator.post_install_message
 end

@@ -3,16 +3,17 @@ module BackboneGenerator
     def post_install_message
       footer = <<'EOS'
 
-==== Release notes for BackboneGenerator ====
+======== Release notes for BackboneGenerator ===========
 
-This gem is NOT yet ready for prime. PLEASE DO NOT
-USE this gem yet. We are working hard to make dependecy
-management and boiler plate code generation in your
-backbone.js apps seameless.
+Thank you very much for downloading the backbone_generator
+gem. I would like to hear your feedback on possible bugs
+and also potential features that you would like to see in
+the next release!
 
-Tawheed and Mhd
+Happy Coding :-)
+- Tawheed 
 
-=======================================
+==========================================================
 
 EOS
     end

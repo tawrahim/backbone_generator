@@ -60,6 +60,9 @@ To create add a new javascript library to your project run this command
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
 
+## Author
+ - Tawheed Abdul-Raheem <tawrahim@gmail.com>
+
 ## Credit and Thank you!
 Mhd Tahawi for his help in thinking through some of the features   
 Addy Osamani for his open source book on backbonejs   

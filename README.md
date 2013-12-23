@@ -64,6 +64,6 @@ To create add a new javascript library to your project run this command
  - Tawheed Abdul-Raheem <tawrahim@gmail.com>
 
 ## Credit and Thank you!
-Mhd Tahawi for his help in thinking through some of the features   
+Mohammad Tahawi for his help in thinking through some of the features   
 Addy Osamani for his open source book on backbonejs   
 Derick Bailey for his awesomse post on naming conventions  

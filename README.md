@@ -4,16 +4,6 @@
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-    gem 'backbone_generator'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
     $ gem install backbone_generator
 
 ## Usage

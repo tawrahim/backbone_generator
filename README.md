@@ -1,4 +1,4 @@
-# BackboneGenerator
+# BackboneGenerator [![Gem Version](https://badge.fury.io/rb/backbone_generator.png)](http://badge.fury.io/rb/backbone_generator)
 
  ruby gem to generate backbone boilerplate code
 
